@@ -51,8 +51,8 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd nextjs-auth-app
+git clone https://github.com/JD-Ashish-3/interntask1.git
+cd interntask1
 ```
 
 ### 2. Install Dependencies

@@ -1,4 +1,3 @@
-// app/api/login/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { users } from "../../../lib/users";
 import { signToken } from "../../../lib/jwt";
@@ -8,7 +7,6 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { username, password } = body;
 
-    // Find user
     const user = users.find(
       (u) => u.username === username && u.password === password
     );
@@ -25,13 +23,12 @@ export async function POST(request: NextRequest) {
       role: user.role,
     });
 
-    // Create response
+
     const response = NextResponse.json({
       success: true,
       role: user.role,
     });
 
-    // Set cookie
     response.cookies.set("auth-token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
